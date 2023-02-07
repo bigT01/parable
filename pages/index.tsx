@@ -39,9 +39,9 @@ export default function Home({posts}:any) {
         setTimeout(() =>{
             setIsLoading(false)
         }, 3000)
-        setTimeout(() =>{
-            setIsPopUp(false)
-        }, 8000)
+        // setTimeout(() =>{
+        //     setIsPopUp(false)
+        // }, 8000)
     }, [])
 
     return (
@@ -71,11 +71,11 @@ export default function Home({posts}:any) {
                                                                  xmlns="http://www.w3.org/2000/svg">
                                                                 <path
                                                                     d="M16.9268 17.0401L20.4 20.4001M19.28 11.4401C19.28 15.77 15.7699 19.2801 11.44 19.2801C7.11006 19.2801 3.59998 15.77 3.59998 11.4401C3.59998 7.11019 7.11006 3.6001 11.44 3.6001C15.7699 3.6001 19.28 7.11019 19.28 11.4401Z"
-                                                                    stroke="black" stroke-width="2" stroke-linecap="round"/>
+                                                                    stroke="black" strokeWidth="2" stroke-linecap="round"/>
                                                             </svg>):
                                                         (
                                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M18 6L6 18M18 18L6 6" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                                                                <path d="M18 6L6 18M18 18L6 6" stroke="black" strokeWidth="2" stroke-linecap="round"/>
                                                             </svg>
                                                         )
                                                     }
@@ -86,7 +86,7 @@ export default function Home({posts}:any) {
                                         <li className="flex items-center">
                                             <button>
                                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4951 2.71381C11.7017 2.29527 12.2985 2.29527 12.5051 2.71381L15.1791 8.13194C15.2611 8.29814 15.4196 8.41334 15.6031 8.43999L21.5823 9.30883C22.0442 9.37595 22.2286 9.94357 21.8944 10.2694L17.5678 14.4868C17.4351 14.6162 17.3745 14.8026 17.4058 14.9852L18.4272 20.9403C18.5061 21.4004 18.0233 21.7512 17.6101 21.534L12.2621 18.7224C12.0981 18.6361 11.9021 18.6361 11.738 18.7224L6.39002 21.534C5.97689 21.7512 5.49404 21.4004 5.57294 20.9403L6.59432 14.9852C6.62565 14.8026 6.56509 14.6162 6.43236 14.4868L2.10573 10.2694C1.7715 9.94357 1.95594 9.37595 2.41783 9.30883L8.39708 8.43999C8.5805 8.41334 8.73906 8.29814 8.82109 8.13194L11.4951 2.71381Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                                                    <path d="M11.4951 2.71381C11.7017 2.29527 12.2985 2.29527 12.5051 2.71381L15.1791 8.13194C15.2611 8.29814 15.4196 8.41334 15.6031 8.43999L21.5823 9.30883C22.0442 9.37595 22.2286 9.94357 21.8944 10.2694L17.5678 14.4868C17.4351 14.6162 17.3745 14.8026 17.4058 14.9852L18.4272 20.9403C18.5061 21.4004 18.0233 21.7512 17.6101 21.534L12.2621 18.7224C12.0981 18.6361 11.9021 18.6361 11.738 18.7224L6.39002 21.534C5.97689 21.7512 5.49404 21.4004 5.57294 20.9403L6.59432 14.9852C6.62565 14.8026 6.56509 14.6162 6.43236 14.4868L2.10573 10.2694C1.7715 9.94357 1.95594 9.37595 2.41783 9.30883L8.39708 8.43999C8.5805 8.41334 8.73906 8.29814 8.82109 8.13194L11.4951 2.71381Z" stroke="black" strokeWidth="2" stroke-linejoin="round"/>
                                                 </svg>
                                             </button>
                                         </li>
@@ -148,16 +148,16 @@ export default function Home({posts}:any) {
                                     </svg>
                                 </Link>
                             </div>
-                            <div className="flex gap-5 mb-24 flex-wrap justify-between max-w-6xl mx-auto">
-                                {reversedPosts?.map((element: any, key) => (<div key={key} className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3  rounded-2xl basis-1/3">
-                                    <div className="flex flex-col gap-5 w-1/2">
-                                        <h3 className="font-bold text-lg">{element.author}</h3>
-                                    </div>
-                                    <Image src={element?.img} alt={`icon-${element?.img}`} width={200} height={200}/>
-                                </div>))}
+                            {/*<div className="flex gap-5 mb-24 flex-wrap justify-between max-w-6xl mx-auto">*/}
+                            {/*    {reversedPosts?.map((element: any, key) => (<div key={key} className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3  rounded-2xl basis-1/3">*/}
+                            {/*        <div className="flex flex-col gap-5 w-1/2">*/}
+                            {/*            <h3 className="font-bold text-lg">{element.author}</h3>*/}
+                            {/*        </div>*/}
+                            {/*        <Image src={element?.img} alt={`icon-${element?.img}`} width={200} height={200}/>*/}
+                            {/*    </div>))}*/}
 
 
-                            </div>
+                            {/*</div>*/}
                         </div>
                     </>
                 )}
