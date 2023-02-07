@@ -35,9 +35,9 @@ export default function Home({posts}:any) {
         setTimeout(() =>{
             setIsLoading(false)
         }, 3000)
-        // setTimeout(() =>{
-        //     setIsPopUp(false)
-        // }, 8000)
+        setTimeout(() =>{
+            setIsPopUp(true)
+        }, 10000)
     }, [])
 
     return (
@@ -48,10 +48,10 @@ export default function Home({posts}:any) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className="flex justify-center items-center decoration-black min-h-screen max-w-7xl mx-auto">
+            <div className="flex justify-center items-center decoration-black min-h-screen max-w-7xl mx-auto relative">
                 {isLoading ? <Loading/> : (
                     <>
-                        {isPopUp && <Greating/>}
+                        {isPopUp && <Greating setIsPopUp={setIsPopUp}/>}
                         <div className="flex flex-col w-full ">
                             <div className="py-6 px-4 mb-16 w-full">
                                 <nav>

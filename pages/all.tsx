@@ -15,7 +15,6 @@ const All = ({posts}:any) => {
 
             <div className="flex justify-center items-start decoration-black min-h-screen max-w-7xl mx-auto">
                 <>
-                    {/*{isPopUp && <Greating/>}*/}
                     <div className="flex flex-col w-full ">
                         <div className="py-6 px-4 mb-16 w-full">
                             <nav>
