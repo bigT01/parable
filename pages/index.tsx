@@ -48,7 +48,7 @@ export default function Home({posts}:any) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className="flex justify-center items-start decoration-black min-h-screen max-w-7xl mx-auto">
+            <div className="flex justify-center items-center decoration-black min-h-screen max-w-7xl mx-auto">
                 {isLoading ? <Loading/> : (
                     <>
                         {isPopUp && <Greating/>}
