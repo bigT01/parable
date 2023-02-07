@@ -170,7 +170,7 @@ export default function Home({posts}:any) {
 
 export async function getServerSideProps(){
     try {
-        const res = await fetch(`http://localhost:3000/data.json`);
+        const res = await fetch(`https://parable.vercel.app/data.json`);
         const data = await res.json();
 
         return {
@@ -179,7 +179,7 @@ export async function getServerSideProps(){
             }
         };
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         return {
             props: {}
         };
