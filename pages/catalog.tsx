@@ -1,46 +1,41 @@
-import Head from 'next/head'
-import Greating from "@/Components/greating/Greating";
-import {useEffect, useState} from "react";
+import Head from "next/head";
 import Loading from "@/Components/Loading";
+import Greating from "@/Components/greating/Greating";
 import Image from "next/image";
 import Link from "next/link";
+import {useEffect, useState} from "react";
 
-
-export default function Home({posts}:any) {
-    const [isLoading, setIsLoading] = useState<boolean>(true)
+const Catalog = ({posts}:any) => {
     const [isSearch, setIsSearch] = useState(false)
-    const [randomPost, setRandomPost] = useState<number>(0)
     const [politics, setPolitics] = useState<number>(0)
     const [writers, setWriters] = useState<number>(0)
     const [businessman, setBusinessman] = useState<number>(0)
+    const [advo, setAdvo] = useState<number>(0)
+    const [sci, setSci] = useState<number>(0)
+    const [acti, setActi] = useState<number>(0)
+    const [moti, setMoti] = useState<number>(0)
+    const [act, setAct] = useState<number>(0)
+    const [filo, setFilo] = useState<number>(0)
     const [isPoliticsAdded, setIsPoliticsAdded] = useState(false)
-    const [isPopUp, setIsPopUp] = useState(false)
-
-
 
     useEffect(() => {
         if(posts){
-            setRandomPost(Math.floor((Math.random() * posts.length) ))
             if(!isPoliticsAdded){
                 posts.filter((element: any) => element.type.filter((subType: any) => subType === 'политик'? setPolitics(oldState => oldState+1): null) )
                 posts.filter((element: any) => element.type.filter((subType: any) => subType === 'писатель'? setWriters(oldState => oldState+1): null) )
                 posts.filter((element: any) => element.type.filter((subType: any) => subType === 'бизнесмен'? setBusinessman(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'адвокат'? setAdvo(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'ученный'? setSci(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'активист'? setActi(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'мотиватор'? setMoti(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'актер'? setAct(oldState => oldState+1): null) )
+                posts.filter((element: any) => element.type.filter((subType: any) => subType === 'филосов'? setFilo(oldState => oldState+1): null) )
                 setIsPoliticsAdded(true)
                 setPolitics(oldState => Math.floor(oldState / 2))
             }
         }
     }, [posts])
-
-    useEffect(() => {
-        setTimeout(() =>{
-            setIsLoading(false)
-        }, 3000)
-        // setTimeout(() =>{
-        //     setIsPopUp(false)
-        // }, 8000)
-    }, [])
-
-    return (
+    return(
         <>
             <Head>
                 <title>Create Next App</title>
@@ -49,9 +44,8 @@ export default function Home({posts}:any) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <div className="flex justify-center items-start decoration-black min-h-screen max-w-7xl mx-auto">
-                {isLoading ? <Loading/> : (
                     <>
-                        {isPopUp && <Greating/>}
+                        {/*{isPopUp && <Greating/>}*/}
                         <div className="flex flex-col w-full ">
                             <div className="py-6 px-4 mb-16 w-full">
                                 <nav>
@@ -89,28 +83,9 @@ export default function Home({posts}:any) {
                                     </ul>
                                 </nav>
                             </div>
-                            <h1 className="font-bold text-3xl mb-5">Притча на день 👋</h1>
-                            <div className="w-full p-6 flex gap-16 items-center bg-indigo-100 rounded-2xl mb-24">
-                                <div className="flex-col flex justify-between h-full w-1/2">
-                                    <q className="text-neutral-600 mb-10 text-xl"> {posts[randomPost]?.body} </q>
-                                    <h3 className="font-bold text-2xl">{posts[randomPost]?.author}</h3>
-                                </div>
-                                <div className="flex justify-end w-1/2">
-                                    <Image  src={posts[randomPost]?.img} alt={`img-${posts[randomPost]?.img}`} width={500} height={500}/>
-                                </div>
-                            </div>
-                            <div className="flex w-full justify-between items-center mb-5">
-                                <h1 className="font-bold text-3xl ">Каталоги</h1>
-                                <Link href='/catalog'>
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.4754 6.11708C12.1218 5.6928 11.4913 5.63548 11.067 5.98904C10.6427 6.3426 10.5854 6.97317 10.9389 7.39745L12.4754 6.11708ZM15.2427 10.9999L16.0109 11.6401C16.32 11.2693 16.32 10.7306 16.0109 10.3597L15.2427 10.9999ZM10.9389 14.6024C10.5854 15.0267 10.6427 15.6573 11.067 16.0108C11.4913 16.3644 12.1218 16.3071 12.4754 15.8828L10.9389 14.6024ZM6.75739 9.99993C6.2051 9.99993 5.75739 10.4476 5.75739 10.9999C5.75739 11.5522 6.2051 11.9999 6.75738 11.9999L6.75739 9.99993ZM10.9389 7.39745L14.4745 11.6401L16.0109 10.3597L12.4754 6.11708L10.9389 7.39745ZM14.4745 10.3597L10.9389 14.6024L12.4754 15.8828L16.0109 11.6401L14.4745 10.3597ZM15.2427 9.99993L6.75739 9.99993L6.75738 11.9999L15.2427 11.9999L15.2427 9.99993ZM17.0811 4.91878C20.4396 8.27729 20.4396 13.7225 17.0811 17.081L18.4954 18.4952C22.6349 14.3557 22.6349 7.64413 18.4954 3.50457L17.0811 4.91878ZM17.0811 17.081C13.7226 20.4395 8.27741 20.4395 4.91891 17.081L3.50469 18.4952C7.64425 22.6348 14.3558 22.6348 18.4954 18.4952L17.0811 17.081ZM4.91891 17.081C1.5604 13.7225 1.5604 8.27729 4.91891 4.91878L3.50469 3.50457C-0.634865 7.64413 -0.634865 14.3557 3.50469 18.4952L4.91891 17.081ZM4.91891 4.91878C8.27741 1.56028 13.7226 1.56028 17.0811 4.91878L18.4954 3.50457C14.3558 -0.634987 7.64425 -0.634987 3.50469 3.50457L4.91891 4.91878Z"
-                                            fill="black"/>
-                                    </svg>
-                                </Link>
-                            </div>
-                            <div className="flex gap-5 mb-24">
+                            <h1 className="font-bold text-3xl mb-12">Каталог</h1>
+
+                            <div className="flex gap-5 mb-5">
                                 <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от политиков</h3>
@@ -133,62 +108,65 @@ export default function Home({posts}:any) {
                                     <Image src="/assets/search.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
                             </div>
-                            <div className="flex w-full justify-between items-center mb-5">
-                                <h1 className="font-bold text-3xl ">Недавно добавленные</h1>
-                                <Link href='/all'>
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.4754 6.11708C12.1218 5.6928 11.4913 5.63548 11.067 5.98904C10.6427 6.3426 10.5854 6.97317 10.9389 7.39745L12.4754 6.11708ZM15.2427 10.9999L16.0109 11.6401C16.32 11.2693 16.32 10.7306 16.0109 10.3597L15.2427 10.9999ZM10.9389 14.6024C10.5854 15.0267 10.6427 15.6573 11.067 16.0108C11.4913 16.3644 12.1218 16.3071 12.4754 15.8828L10.9389 14.6024ZM6.75739 9.99993C6.2051 9.99993 5.75739 10.4476 5.75739 10.9999C5.75739 11.5522 6.2051 11.9999 6.75738 11.9999L6.75739 9.99993ZM10.9389 7.39745L14.4745 11.6401L16.0109 10.3597L12.4754 6.11708L10.9389 7.39745ZM14.4745 10.3597L10.9389 14.6024L12.4754 15.8828L16.0109 11.6401L14.4745 10.3597ZM15.2427 9.99993L6.75739 9.99993L6.75738 11.9999L15.2427 11.9999L15.2427 9.99993ZM17.0811 4.91878C20.4396 8.27729 20.4396 13.7225 17.0811 17.081L18.4954 18.4952C22.6349 14.3557 22.6349 7.64413 18.4954 3.50457L17.0811 4.91878ZM17.0811 17.081C13.7226 20.4395 8.27741 20.4395 4.91891 17.081L3.50469 18.4952C7.64425 22.6348 14.3558 22.6348 18.4954 18.4952L17.0811 17.081ZM4.91891 17.081C1.5604 13.7225 1.5604 8.27729 4.91891 4.91878L3.50469 3.50457C-0.634865 7.64413 -0.634865 14.3557 3.50469 18.4952L4.91891 17.081ZM4.91891 4.91878C8.27741 1.56028 13.7226 1.56028 17.0811 4.91878L18.4954 3.50457C14.3558 -0.634987 7.64425 -0.634987 3.50469 3.50457L4.91891 4.91878Z"
-                                            fill="black"/>
-                                    </svg>
-                                </Link>
-                            </div>
+
                             <div className="flex gap-5 mb-5">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
                                     <div className="flex flex-col gap-5 w-1/2">
-                                        <h3 className="font-bold text-lg">{posts[posts.length-1].author}</h3>
-                                        <p className="text-neutral-600 text-lg">{posts[posts.length-1].body}</p>
+                                        <h3 className="font-bold text-lg">Притча от адвокатов</h3>
+                                        <p className="text-neutral-600 text-xl">{advo} притчь</p>
                                     </div>
-                                    <Image src={posts[posts.length-1].img} alt={`icon-${posts[posts.length-1].img}`} width={220} height={220}/>
-                                    <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
+                                    <Image src="/assets/seo.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
                                     <div className="flex flex-col gap-5 w-1/2">
-                                        <h3 className="font-bold text-lg">{posts[posts.length-2].author}</h3>
-                                        <p className="text-neutral-600 text-lg">{posts[posts.length-2].body}</p>
+                                        <h3 className="font-bold text-lg">Притча от ученных</h3>
+                                        <p className="text-neutral-600 text-xl">{sci} притчь</p>
                                     </div>
-                                    <Image src={posts[posts.length-2].img} alt={`icon-${posts[posts.length-2].img}`} width={220} height={220}/>
-                                    <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
+                                    <Image src="/assets/welcome.svg" alt="icon-plan" width={200} height={200}/>
+                                </div>
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                    <div className="flex flex-col gap-5 w-1/2">
+                                        <h3 className="font-bold text-lg">Притча от активистов</h3>
+                                        <p className="text-neutral-600 text-xl">{acti} притчь</p>
+                                    </div>
+                                    <Image src="/assets/success.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
                             </div>
+
                             <div className="flex gap-5 mb-24">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
                                     <div className="flex flex-col gap-5 w-1/2">
-                                        <h3 className="font-bold text-lg">{posts[posts.length-3].author}</h3>
-                                        <p className="text-neutral-600 text-lg">{posts[posts.length-3].body}</p>
+                                        <h3 className="font-bold text-lg">Притча от мотиваторов</h3>
+                                        <p className="text-neutral-600 text-xl">{moti} притчь</p>
                                     </div>
-                                    <Image src={posts[posts.length-3].img} alt={`icon-${posts[posts.length-3].img}`} width={220} height={220}/>
-                                    <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
+                                    <Image src="/assets/vision.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
                                     <div className="flex flex-col gap-5 w-1/2">
-                                        <h3 className="font-bold text-lg">{posts[posts.length-4].author}</h3>
-                                        <p className="text-neutral-600 text-lg">{posts[posts.length-4].body}</p>
+                                        <h3 className="font-bold text-lg">Притча от актеров</h3>
+                                        <p className="text-neutral-600 text-xl">{act} притчь</p>
                                     </div>
-                                    <Image src={posts[posts.length-4].img} alt={`icon-${posts[posts.length-4].img}`} width={220} height={220}/>
-                                    <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
+                                    <Image src="/assets/yoga.svg" alt="icon-plan" width={200} height={200}/>
+                                </div>
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                    <div className="flex flex-col gap-5 w-1/2">
+                                        <h3 className="font-bold text-lg">Притча от филосовов</h3>
+                                        <p className="text-neutral-600 text-xl">{filo} притчь</p>
+                                    </div>
+                                    <Image src="/assets/teaching.svg" alt="icon-piano" width={200} height={200}/>
                                 </div>
                             </div>
+
+
                         </div>
                     </>
-                )}
             </div>
         </>
     )
-
-
 }
+
+export default Catalog
+
 
 export async function getServerSideProps(){
     try {
