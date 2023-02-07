@@ -56,7 +56,7 @@ const All = ({posts}:any) => {
 
                         <div className="grid gap-4 grid-cols-3 ">
                             {posts.map((element: any) => (
-                                <div className="flex flex-col items-center p-6 gap-16 items-center bg-indigo-100 w-full rounded-2xl "
+                                <div className="flex flex-col items-center p-6 gap-16 items-center bg-indigo-100 w-full rounded-2xl hover-ani"
                                      key={element.id}>
                                     <Image src={element.img} alt="icon-plan" width={220} height={220}/>
                                     <div className="flex flex-col gap-5 w-full">

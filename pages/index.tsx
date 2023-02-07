@@ -111,21 +111,21 @@ export default function Home({posts}:any) {
                                 </Link>
                             </div>
                             <div className="flex gap-5 mb-24">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
-                                    <div className="flex flex-col gap-5 w-1/2">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
+                                    <div className="flex flex-col gap-5 w-1/2 ">
                                         <h3 className="font-bold text-lg">Притча от политиков</h3>
                                         <p className="text-neutral-600 text-xl">{politics} притчь</p>
                                     </div>
                                     <Image src="/assets/piano.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от бизнесменов</h3>
                                         <p className="text-neutral-600 text-xl">{businessman} притчь</p>
                                     </div>
                                     <Image src="/assets/plan.svg" alt="icon-plan" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от писателей</h3>
                                         <p className="text-neutral-600 text-xl">{writers} притчь</p>
@@ -145,7 +145,7 @@ export default function Home({posts}:any) {
                                 </Link>
                             </div>
                             <div className="flex gap-5 mb-5">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">{posts[posts.length-1].author}</h3>
                                         <p className="text-neutral-600 text-lg">{posts[posts.length-1].body}</p>
@@ -153,7 +153,7 @@ export default function Home({posts}:any) {
                                     <Image src={posts[posts.length-1].img} alt={`icon-${posts[posts.length-1].img}`} width={220} height={220}/>
                                     <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">{posts[posts.length-2].author}</h3>
                                         <p className="text-neutral-600 text-lg">{posts[posts.length-2].body}</p>
@@ -163,7 +163,7 @@ export default function Home({posts}:any) {
                                 </div>
                             </div>
                             <div className="flex gap-5 mb-24">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">{posts[posts.length-3].author}</h3>
                                         <p className="text-neutral-600 text-lg">{posts[posts.length-3].body}</p>
@@ -171,7 +171,7 @@ export default function Home({posts}:any) {
                                     <Image src={posts[posts.length-3].img} alt={`icon-${posts[posts.length-3].img}`} width={220} height={220}/>
                                     <div className="absolute rounded-2xl bg-yellow-400 text-lg px-4 py-2" style={{right: '-10px', top: '-10px'}}>new</div>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/2 rounded-2xl relative hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">{posts[posts.length-4].author}</h3>
                                         <p className="text-neutral-600 text-lg">{posts[posts.length-4].body}</p>

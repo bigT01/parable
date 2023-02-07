@@ -38,6 +38,15 @@
   }
 }
 
+.hover-ani{
+  box-shadow: 1px 1px 1px #141414;
+  transition: box-shadow 0.2s linear;
+  &:hover{
+    box-shadow: 5px 10px 1px #141414;
+    transition: box-shadow 0.2s linear;
+  }
+}
+
 
 @keyframes opacity-any {
   from{

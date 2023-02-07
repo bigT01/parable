@@ -85,21 +85,21 @@ const Catalog = ({posts}:any) => {
                             <h1 className="font-bold text-3xl mb-12">Каталог</h1>
 
                             <div className="flex gap-5 mb-5">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от политиков</h3>
                                         <p className="text-neutral-600 text-xl">{politics} притчь</p>
                                     </div>
                                     <Image src="/assets/piano.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от бизнесменов</h3>
                                         <p className="text-neutral-600 text-xl">{businessman} притчь</p>
                                     </div>
                                     <Image src="/assets/plan.svg" alt="icon-plan" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от писателей</h3>
                                         <p className="text-neutral-600 text-xl">{writers} притчь</p>
@@ -109,21 +109,21 @@ const Catalog = ({posts}:any) => {
                             </div>
 
                             <div className="flex gap-5 mb-5">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от адвокатов</h3>
                                         <p className="text-neutral-600 text-xl">{advo} притчь</p>
                                     </div>
                                     <Image src="/assets/seo.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от ученных</h3>
                                         <p className="text-neutral-600 text-xl">{sci} притчь</p>
                                     </div>
                                     <Image src="/assets/welcome.svg" alt="icon-plan" width={200} height={200}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от активистов</h3>
                                         <p className="text-neutral-600 text-xl">{acti} притчь</p>
@@ -133,21 +133,21 @@ const Catalog = ({posts}:any) => {
                             </div>
 
                             <div className="flex gap-5 mb-24">
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от мотиваторов</h3>
                                         <p className="text-neutral-600 text-xl">{moti} притчь</p>
                                     </div>
                                     <Image src="/assets/vision.svg" alt="icon-piano" width={220} height={220}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от актеров</h3>
                                         <p className="text-neutral-600 text-xl">{act} притчь</p>
                                     </div>
                                     <Image src="/assets/yoga.svg" alt="icon-plan" width={200} height={200}/>
                                 </div>
-                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl">
+                                <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
                                     <div className="flex flex-col gap-5 w-1/2">
                                         <h3 className="font-bold text-lg">Притча от филосовов</h3>
                                         <p className="text-neutral-600 text-xl">{filo} притчь</p>
