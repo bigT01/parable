@@ -47,6 +47,15 @@
   }
 }
 
+.menu{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  padding: 50px;
+  max-width: 1280px;
+
+}
+
 
 @keyframes opacity-any {
   from{
