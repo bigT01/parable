@@ -16,14 +16,14 @@ const LoginComponent = ({isRegister, setIsClicked}: LoginProps) => {
     return (
         <div className="fixed z-20 bg-blue-400 w-1/3 rounded-2xl" ref={ref} style={{transform: "translate(-50%, -50%)", top: "50%", left:"50%"}} >
             <div className="flex justify-between mb-10">
-                <button onClick={() => setIsReg(false)} className={`w-1/2 py-4 rounded-br-2xl rounded-tl-2xl ${isReg ? "border-r border-b border-black bg-blue-200" : "text-white"}`}>Регистрироваться</button>
-                <button onClick={() => setIsReg(true)} className={`w-1/2 py-4 rounded-tr-2xl rounded-bl-2xl ${!isReg ? "border-r border-l border-black bg-blue-200" : "text-white"}`}>Войти</button>
+                <button onClick={() => setIsReg(false)} className={`w-1/2 py-4 rounded-br-2xl rounded-tl-2xl font-bold ${isReg ? "border-r border-b border-black bg-blue-200" : "text-white"}`}>Регистрироваться</button>
+                <button onClick={() => setIsReg(true)} className={`w-1/2 py-4 rounded-tr-2xl rounded-bl-2xl font-bold ${!isReg ? "border-r border-l border-black bg-blue-200" : "text-white"}`}>Войти</button>
             </div>
             {!isReg? <SignUp />: <SignIn/>}
 
             <button onClick={() =>{setIsClicked(false)}} className="bg-white border p-2 absolute box-border" style={{borderRadius: "50%", top: "-25px", right:"-25px"}}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M18 18L6 6" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 6L6 18M18 18L6 6" stroke="black" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
             </button>
         </div>

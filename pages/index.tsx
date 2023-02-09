@@ -175,7 +175,6 @@ export default function Home({posts}: any) {
 export async function getServerSideProps() {
     try {
         const res = await fetch(`https://parable.vercel.app/data.json`);
-        // const res = await fetch(`http://localhost:3000/data.json`);
         const data = await res.json();
 
         return {

@@ -4,12 +4,13 @@ import LoginComponent from "@/Components/login/LoginComponent";
 import {UseAuth} from "@/Components/context/AuthContext";
 import {Button} from "@mui/material";
 
+
 type LayoutProps = {
     children: ReactNode
 }
 
 const Layout = ({children, ...rest}:LayoutProps) => {
-    const { isAuth } = UseAuth()
+    const { isAuth, Auth } = UseAuth()
     const [isRegister, setIsRegister] = useState(false)
     const [isClicked, setIsClicked] = useState(false)
 
@@ -18,17 +19,20 @@ const Layout = ({children, ...rest}:LayoutProps) => {
             setIsClicked(false)
         }
     }, [isAuth])
-
+    
+    const handleLogout = () => {
+        Auth(null)
+    }
 
     return(
-        <div className="flex justify-center items-start decoration-black min-h-screen max-w-7xl mx-auto">
-            <div {...rest} className="max-w-7xl mx-auto relative ">
-                <div className="max-w-7xl mx-auto relative">
+        <div className="flex justify-center items-start decoration-black min-h-screen max-w-7xl mx-auto w-full">
+            <div {...rest} className="max-w-7xl mx-auto relative w-full box-border">
+                <div className="max-w-7xl mx-auto relative w-full">
                     <div className="py-6 px-4 mb-16 w-full">
                         <nav>
                             <ul className="flex items-center">
                                 <li className="mr-auto">
-                                    <h3 className="font-bold text-2xl">Parable</h3>
+                                    <Link href='/' className="font-bold text-2xl">Parable</Link>
                                 </li>
                                 <li className="flex items-center mr-2.5">
                                     <button>
@@ -40,7 +44,7 @@ const Layout = ({children, ...rest}:LayoutProps) => {
                                 {isAuth ? (
                                     <>
                                         <li className="flex items-center mr-2.5">
-                                            <Button variant="contained" color="error">
+                                            <Button variant="contained" color="error" onClick={handleLogout}>
                                                 Выйти
                                             </Button>
                                         </li>
@@ -52,7 +56,7 @@ const Layout = ({children, ...rest}:LayoutProps) => {
                                                 setIsRegister(true)
                                                 setIsClicked(true)
                                             }}>
-                                                <p className="text-base">Регистрироваться</p>
+                                                <p className="text-base ">Регистрироваться</p>
                                             </button>
                                         </li>
                                         <li className="flex items-center">

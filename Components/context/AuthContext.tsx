@@ -30,10 +30,13 @@ export const AuthProvider = ({ children }: AuthProviderContext) => {
     const [authToken, setAuthToken] = useLocalStorage<AuthToken>("token", {token:''});
 
     useEffect(() => {
-        if(authToken){
+        if(authToken.token !== ''){
             setIsAuth(true)
         }
-    }, [])
+        else{
+            setIsAuth(false)
+        }
+    }, [authToken])
 
     useEffect(() =>{
         if(message){
@@ -53,6 +56,10 @@ export const AuthProvider = ({ children }: AuthProviderContext) => {
         if (authToken){
             setIsAuth(true)
             setAuthToken({token: authToken})
+        }
+        if (authToken === null){
+            setIsAuth(false)
+            setAuthToken({token: ""})
         }
     }
 
