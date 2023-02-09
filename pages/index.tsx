@@ -65,43 +65,43 @@ export default function Home({posts}: any) {
                                        height={500}/>
                             </div>
                         </div>
-                        <div className="flex w-full justify-between items-center mb-5">
-                            <h1 className="font-bold text-3xl ">Каталоги</h1>
-                            <Link href='/catalog'>
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.4754 6.11708C12.1218 5.6928 11.4913 5.63548 11.067 5.98904C10.6427 6.3426 10.5854 6.97317 10.9389 7.39745L12.4754 6.11708ZM15.2427 10.9999L16.0109 11.6401C16.32 11.2693 16.32 10.7306 16.0109 10.3597L15.2427 10.9999ZM10.9389 14.6024C10.5854 15.0267 10.6427 15.6573 11.067 16.0108C11.4913 16.3644 12.1218 16.3071 12.4754 15.8828L10.9389 14.6024ZM6.75739 9.99993C6.2051 9.99993 5.75739 10.4476 5.75739 10.9999C5.75739 11.5522 6.2051 11.9999 6.75738 11.9999L6.75739 9.99993ZM10.9389 7.39745L14.4745 11.6401L16.0109 10.3597L12.4754 6.11708L10.9389 7.39745ZM14.4745 10.3597L10.9389 14.6024L12.4754 15.8828L16.0109 11.6401L14.4745 10.3597ZM15.2427 9.99993L6.75739 9.99993L6.75738 11.9999L15.2427 11.9999L15.2427 9.99993ZM17.0811 4.91878C20.4396 8.27729 20.4396 13.7225 17.0811 17.081L18.4954 18.4952C22.6349 14.3557 22.6349 7.64413 18.4954 3.50457L17.0811 4.91878ZM17.0811 17.081C13.7226 20.4395 8.27741 20.4395 4.91891 17.081L3.50469 18.4952C7.64425 22.6348 14.3558 22.6348 18.4954 18.4952L17.0811 17.081ZM4.91891 17.081C1.5604 13.7225 1.5604 8.27729 4.91891 4.91878L3.50469 3.50457C-0.634865 7.64413 -0.634865 14.3557 3.50469 18.4952L4.91891 17.081ZM4.91891 4.91878C8.27741 1.56028 13.7226 1.56028 17.0811 4.91878L18.4954 3.50457C14.3558 -0.634987 7.64425 -0.634987 3.50469 3.50457L4.91891 4.91878Z"
-                                        fill="black"/>
-                                </svg>
-                            </Link>
-                        </div>
-                        <div className="flex gap-5 mb-24">
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
-                                <div className="flex flex-col gap-5 w-1/2 ">
-                                    <h3 className="font-bold text-lg">афоризмы от политиков</h3>
-                                    <p className="text-neutral-600 text-xl">{politics} афторизм</p>
-                                </div>
-                                <Image src="/assets/piano.svg" alt="icon-piano" width={220} height={220}/>
-                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
-                            </div>
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
-                                <div className="flex flex-col gap-5 w-1/2">
-                                    <h3 className="font-bold text-lg">афоризмы от бизнесменов</h3>
-                                    <p className="text-neutral-600 text-xl">{businessman} афоризм</p>
-                                </div>
-                                <Image src="/assets/plan.svg" alt="icon-plan" width={220} height={220}/>
-                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
-                            </div>
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
-                                <div className="flex flex-col gap-5 w-1/2">
-                                    <h3 className="font-bold text-lg">афоризмы от писателей</h3>
-                                    <p className="text-neutral-600 text-xl">{writers} афоризм</p>
-                                </div>
-                                <Image src="/assets/search.svg" alt="icon-piano" width={220} height={220}/>
-                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
-                            </div>
-                        </div>
+                        {/*<div className="flex w-full justify-between items-center mb-5">*/}
+                        {/*    <h1 className="font-bold text-3xl ">Каталоги</h1>*/}
+                        {/*    <Link href='/catalog'>*/}
+                        {/*        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"*/}
+                        {/*             xmlns="http://www.w3.org/2000/svg">*/}
+                        {/*            <path*/}
+                        {/*                d="M12.4754 6.11708C12.1218 5.6928 11.4913 5.63548 11.067 5.98904C10.6427 6.3426 10.5854 6.97317 10.9389 7.39745L12.4754 6.11708ZM15.2427 10.9999L16.0109 11.6401C16.32 11.2693 16.32 10.7306 16.0109 10.3597L15.2427 10.9999ZM10.9389 14.6024C10.5854 15.0267 10.6427 15.6573 11.067 16.0108C11.4913 16.3644 12.1218 16.3071 12.4754 15.8828L10.9389 14.6024ZM6.75739 9.99993C6.2051 9.99993 5.75739 10.4476 5.75739 10.9999C5.75739 11.5522 6.2051 11.9999 6.75738 11.9999L6.75739 9.99993ZM10.9389 7.39745L14.4745 11.6401L16.0109 10.3597L12.4754 6.11708L10.9389 7.39745ZM14.4745 10.3597L10.9389 14.6024L12.4754 15.8828L16.0109 11.6401L14.4745 10.3597ZM15.2427 9.99993L6.75739 9.99993L6.75738 11.9999L15.2427 11.9999L15.2427 9.99993ZM17.0811 4.91878C20.4396 8.27729 20.4396 13.7225 17.0811 17.081L18.4954 18.4952C22.6349 14.3557 22.6349 7.64413 18.4954 3.50457L17.0811 4.91878ZM17.0811 17.081C13.7226 20.4395 8.27741 20.4395 4.91891 17.081L3.50469 18.4952C7.64425 22.6348 14.3558 22.6348 18.4954 18.4952L17.0811 17.081ZM4.91891 17.081C1.5604 13.7225 1.5604 8.27729 4.91891 4.91878L3.50469 3.50457C-0.634865 7.64413 -0.634865 14.3557 3.50469 18.4952L4.91891 17.081ZM4.91891 4.91878C8.27741 1.56028 13.7226 1.56028 17.0811 4.91878L18.4954 3.50457C14.3558 -0.634987 7.64425 -0.634987 3.50469 3.50457L4.91891 4.91878Z"*/}
+                        {/*                fill="black"/>*/}
+                        {/*        </svg>*/}
+                        {/*    </Link>*/}
+                        {/*</div>*/}
+                        {/*<div className="flex gap-5 mb-24">*/}
+                        {/*    <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">*/}
+                        {/*        <div className="flex flex-col gap-5 w-1/2 ">*/}
+                        {/*            <h3 className="font-bold text-lg">афоризмы от политиков</h3>*/}
+                        {/*            <p className="text-neutral-600 text-xl">{politics} афторизм</p>*/}
+                        {/*        </div>*/}
+                        {/*        <Image src="/assets/piano.svg" alt="icon-piano" width={220} height={220}/>*/}
+                        {/*        <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">*/}
+                        {/*        <div className="flex flex-col gap-5 w-1/2">*/}
+                        {/*            <h3 className="font-bold text-lg">афоризмы от бизнесменов</h3>*/}
+                        {/*            <p className="text-neutral-600 text-xl">{businessman} афоризм</p>*/}
+                        {/*        </div>*/}
+                        {/*        <Image src="/assets/plan.svg" alt="icon-plan" width={220} height={220}/>*/}
+                        {/*        <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">*/}
+                        {/*        <div className="flex flex-col gap-5 w-1/2">*/}
+                        {/*            <h3 className="font-bold text-lg">афоризмы от писателей</h3>*/}
+                        {/*            <p className="text-neutral-600 text-xl">{writers} афоризм</p>*/}
+                        {/*        </div>*/}
+                        {/*        <Image src="/assets/search.svg" alt="icon-piano" width={220} height={220}/>*/}
+                        {/*        <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className="flex w-full justify-between items-center mb-5">
                             <h1 className="font-bold text-3xl ">Недавно добавленные</h1>
                             <Link href='/all'>
