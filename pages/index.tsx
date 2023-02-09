@@ -54,7 +54,7 @@ export default function Home({posts}: any) {
                     {isPopUp && <Greating setIsPopUp={setIsPopUp}/>}
                     <div className="flex flex-col w-full ">
 
-                        <h1 className="font-bold text-3xl mb-5">Притча на день 👋</h1>
+                        <h1 className="font-bold text-3xl mb-5">афоризма на день 👋</h1>
                         <div className="w-full p-6 flex gap-16 items-center bg-indigo-100 rounded-2xl mb-24">
                             <div className="flex-col flex justify-between h-full w-1/2">
                                 <q className="text-neutral-600 mb-10 text-xl"> {posts[randomPost]?.body} </q>
@@ -77,27 +77,29 @@ export default function Home({posts}: any) {
                             </Link>
                         </div>
                         <div className="flex gap-5 mb-24">
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
+                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
                                 <div className="flex flex-col gap-5 w-1/2 ">
-                                    <h3 className="font-bold text-lg">Притча от политиков</h3>
-                                    <p className="text-neutral-600 text-xl">{politics} притчь</p>
+                                    <h3 className="font-bold text-lg">афоризмы от политиков</h3>
+                                    <p className="text-neutral-600 text-xl">{politics} афторизм</p>
                                 </div>
                                 <Image src="/assets/piano.svg" alt="icon-piano" width={220} height={220}/>
-                                <Link href={'/catalog/politics'}></Link>
+                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
                             </div>
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
+                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
                                 <div className="flex flex-col gap-5 w-1/2">
-                                    <h3 className="font-bold text-lg">Притча от бизнесменов</h3>
-                                    <p className="text-neutral-600 text-xl">{businessman} притчь</p>
+                                    <h3 className="font-bold text-lg">афоризмы от бизнесменов</h3>
+                                    <p className="text-neutral-600 text-xl">{businessman} афоризм</p>
                                 </div>
                                 <Image src="/assets/plan.svg" alt="icon-plan" width={220} height={220}/>
+                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
                             </div>
-                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani">
+                            <div className="flex p-6 gap-16 items-center bg-indigo-100 w-1/3 rounded-2xl hover-ani relative">
                                 <div className="flex flex-col gap-5 w-1/2">
-                                    <h3 className="font-bold text-lg">Притча от писателей</h3>
-                                    <p className="text-neutral-600 text-xl">{writers} притчь</p>
+                                    <h3 className="font-bold text-lg">афоризмы от писателей</h3>
+                                    <p className="text-neutral-600 text-xl">{writers} афоризм</p>
                                 </div>
                                 <Image src="/assets/search.svg" alt="icon-piano" width={220} height={220}/>
+                                <Link href={'/catalog/politics'} className="absolute" style={{width: '100%', height:"100%", left: '0', top: '0'}}/>
                             </div>
                         </div>
                         <div className="flex w-full justify-between items-center mb-5">
