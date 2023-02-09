@@ -19,7 +19,7 @@ const UpdateProfile = ({setUpdate, about, id}:UpdateProfileProps) =>{
     const [authToken, setAuthToken] = useLocalStorage<AuthToken>("token", {token:''});
 
     const saveHandler = async () => {
-        axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/profile/about/${id}`,{
+        axios.patch(`http://185.22.67.92:4444/profile/about/${id}`,{
             about: value
         }, {
             headers: {"Authorization": `Bearer ${authToken.token}`}

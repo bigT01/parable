@@ -11,7 +11,7 @@ const SignIn =() =>{
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const { Message, Auth } = UseAuth()
     const onSubmit: SubmitHandler<Inputs> = async data => {
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, data)
+        axios.post(`http://185.22.67.92:4444/auth/login`, data)
             .then((res) =>{
                 Message(res.status)
                 Auth(res.data.token)

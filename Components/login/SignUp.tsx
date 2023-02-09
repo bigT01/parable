@@ -13,7 +13,7 @@ const SignUp =() =>{
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const { Message, Auth } = UseAuth()
     const onSubmit: SubmitHandler<Inputs> = data => {
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, data)
+        axios.post(`http://185.22.67.92:4444/auth/register`, data)
             .then((res) =>{
                 Message(res.status)
                 Auth(res.data.token)

@@ -40,13 +40,13 @@ const Profile = () => {
 
     useEffect(() => {
         if(authToken.token){
-            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
+            axios.get(`http://185.22.67.92:4444/auth/me`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
                 .then(res => {
                     setData(res?.data)
                     setShowPage(true)
                 })
                 .catch(err => console.log(err))
-            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
+            axios.get(`$http://185.22.67.92:4444/posts`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
                 .then(res => {
                     setPosts(res?.data)
                 })
@@ -55,7 +55,7 @@ const Profile = () => {
     }, [authToken])
 
     const handleLike = (id: string) =>{
-        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/postsl/${id}`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
+        axios.get(`http://185.22.67.92:4444/postsl/${id}`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
             .then(res => {
                 Message(res.status)
             })
@@ -63,7 +63,7 @@ const Profile = () => {
     }
 
     const handleDelete = (id: string) =>{
-        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
+        axios.delete(`http://185.22.67.92:4444/posts/${id}`, {headers: {"Authorization": `Bearer ${authToken.token}`}})
             .then(res => {
                 Message(res.status)
             })

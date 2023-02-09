@@ -20,7 +20,7 @@ const Add = () => {
     const { Message, Auth } = UseAuth()
 
     const onSubmit: SubmitHandler<Inputs> = data => {
-        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/posts`, data, {
+        axios.post(`http://185.22.67.92:4444/posts`, data, {
             headers: {"Authorization": `Bearer ${authToken.token}`}
         })
             .then((res) =>{
